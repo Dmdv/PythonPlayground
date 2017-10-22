@@ -8,13 +8,15 @@ Thermos -- Add a URL
 
 {% block content %}
 
-<form action="" method="post">
-    <p>Please, enter your bookmark here:
-        <input type="text" name="url" id="text">
-    </p>
-    <p>
-        <input type="button" value="submit">
-    </p>
+<form action="/add" method="post">
+    <article>
+        <p>Please, enter your bookmark here:
+            <input type="text" name="url" id="text">
+        </p>
+        <p>
+            <input type="button" value="submit">
+        </p>
+        </article>
 </form>
   
 {% endblock content %}

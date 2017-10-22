@@ -65,6 +65,19 @@ body {
     margin: 0 5%;
 }
 
+.flashes ul{
+    margin: 0 0;
+    background: #ffd6a3;
+    color: #000;
+
+    list-style-type: none;
+    list-style: none;
+}
+
+article.flashes{
+    margin-bottom: 1em;
+}
+
 /* ===================
     ALL: Orange Theme
    =================== */
@@ -86,6 +99,10 @@ body {
 
 .title {
     color: white;
+}
+
+.header {
+    color: rgb(4, 45, 134);
 }
 
 /* ==============

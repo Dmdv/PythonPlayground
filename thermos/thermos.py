@@ -14,6 +14,9 @@ APP.logger.setLevel(DEBUG)
 
 bookmarks = []
 
+def new_bookmarks(num):
+    return sorted(bookmarks, key = lambda bm: bm['date'], reverse=True)[:num]
+
 def store_bookmark(url):
     """saves bookmark"""
     bookmarks.append(
@@ -36,7 +39,7 @@ class User(object):
 @APP.route('/index')
 def index():
     """by default looks in templates folder"""
-    return render_template("index.html", user=User("Dmitry", "Dyachkov"))
+    return render_template("index.html", new_bookmarks=new_bookmarks(5))
 
 @APP.route('/add', methods = ['GET', 'POST'])
 def add():

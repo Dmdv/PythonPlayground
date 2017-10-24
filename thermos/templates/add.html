@@ -8,15 +8,19 @@ Thermos -- Add a URL
 
 {% block content %}
 
-<form action="/add" method="post">
+<form action="" method="post">
+    {{ form.hidden_tag }}
     <article>
         <p>Please, enter your bookmark here:
-            <input type="text" name="url" id="text">
+            {{ form.url(size = 50) }}
+        </p>
+        <p>Add an optional description:
+            {{ form.description(size = 50) }}
         </p>
         <p>
-            <input type="button" value="submit">
+            <button type="submit" name="submit">Submit</button>
         </p>
-        </article>
+    </article>
 </form>
   
 {% endblock content %}

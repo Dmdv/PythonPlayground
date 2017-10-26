@@ -9,7 +9,7 @@ Thermos -- Add a URL
 {% block content %}
 
 <form action="" method="post">
-    {{ form.hidden_tag }}
+    {{ form.hidden_tag() }}
     <article>
         <p>Please, enter your bookmark here:
             {{ form.url(size = 50) }}

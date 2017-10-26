@@ -11,7 +11,7 @@ SECRET_KEY = '\xfdq\xd7\x0b\xfa\x1c\xd3\xcd\x9fZ\x7f\x15\x8a\xfb\xed\xc6\xdf\xbc
 APP = Flask(__name__)
 APP.secret_key = SECRET_KEY
 APP.config['SECRET_KEY'] = SECRET_KEY
-CsrfProtect(APP)
+# CsrfProtect(APP)
 APP.logger.setLevel(DEBUG)
 
 bookmarks = []
@@ -22,7 +22,8 @@ def new_bookmarks(num):
 
 
 def store_bookmark(url):
-    """saves bookmark
+    """
+    saves bookmark
     """
     bookmarks.append(
         dict(
@@ -57,16 +58,20 @@ def add():
     """adds urls"""
 
     APP.logger.debug('In the add method')
+
     form = BookmarkForm()
+
     if form.validate_on_submit():
         url = form.url.data
         description = form.description.data
         store_bookmark(url)
-        flash("Stored '{}'".format(description))
+        flash("Stored '{}'".format(url))
         return redirect(url_for('index'))
 
-    APP.logger.debug('Not valid')
-    APP.logger.debug(form.errors)
+    if form.errors:
+        APP.logger.debug('Not valid')
+        APP.logger.debug(form.errors)
+
     return render_template('add.html', form=form)
 
     """Old way"""

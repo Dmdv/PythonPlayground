@@ -4,7 +4,7 @@ from datetime import datetime
 from flask import Flask, render_template, url_for, request, redirect, flash
 from logging import DEBUG
 from forms import BookmarkForm
-from flask_wtf.csrf import CsrfProtect
+# from flask_wtf.csrf import CsrfProtect
 
 SECRET_KEY = '\xfdq\xd7\x0b\xfa\x1c\xd3\xcd\x9fZ\x7f\x15\x8a\xfb\xed\xc6\xdf\xbc-\xd5\xff\xcbfl'
 
@@ -33,21 +33,27 @@ def store_bookmark(url):
 
 
 class User(object):
-    """ User to save """
+    """
+    User to save
+    """
 
     def __init__(self, firstname, lastname):
         self.firstname = firstname
         self.lastname = lastname
 
     def initials(self):
-        """Initials"""
+        """
+        Initials
+        """
         return "{}. {}.".format(self.firstname[0], self.firstname[0])
 
 
 @APP.route('/')
 @APP.route('/index')
 def index():
-    """by default looks in templates folder"""
+    """
+    by default looks in templates folder
+    """
 
     APP.logger.debug('In the index method')
     return render_template("index.html", new_bookmarks=new_bookmarks(5))
@@ -55,7 +61,9 @@ def index():
 
 @APP.route('/add', methods=['GET', 'POST'])
 def add():
-    """adds urls"""
+    """
+    adds urls
+    """
 
     APP.logger.debug('In the add method')
 
@@ -65,7 +73,7 @@ def add():
         url = form.url.data
         description = form.description.data
         store_bookmark(url)
-        flash("Stored '{}'".format(url))
+        flash("Stored '{}-{}'".format(url, description))
         return redirect(url_for('index'))
 
     if form.errors:

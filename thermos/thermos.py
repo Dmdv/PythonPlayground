@@ -70,6 +70,9 @@ def add():
     form = BookmarkForm()
 
     if form.validate_on_submit():
+
+        APP.logger.debug('In the validate_on_submit')
+
         url = form.url.data
         description = form.description.data
         store_bookmark(url)

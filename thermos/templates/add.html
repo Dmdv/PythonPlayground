@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "form_macros.html" import render_field %}
 
 {% block title %}
 
@@ -10,17 +11,17 @@ Thermos -- Add a URL
 
 <form action="" method="post">
     {{ form.hidden_tag() }}
-    <article>
-        <p>Please, enter your bookmark here:
-            {{ form.url(size = 50) }}
-        </p>
-        <p>Add an optional description:
-            {{ form.description(size = 50) }}
-        </p>
-        <p>
-            <button type="submit" name="submit">Submit</button>
-        </p>
-    </article>
+    <table>
+        {{ render_field(form.url, size=50) }}
+        {{ render_field(form.description, size=50) }}
+        <tr class="submit">
+            <td></td>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+
+    </table>
 </form>
   
 {% endblock content %}

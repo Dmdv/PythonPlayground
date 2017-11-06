@@ -12,7 +12,7 @@
 	
 Other usefull commands:
 
-List of available envs: workon (WORKON_HOME is environment path)
+List of available envs: workon (WORKON_HOME is environment path) <br>
 deactivate: quit env <br>
 rmvirtualenv env-name: remove virtual env <br>
 pip freeze > requirements.txt: save dependencies <br>

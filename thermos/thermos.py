@@ -65,23 +65,15 @@ def add():
     adds urls
     """
 
-    APP.logger.debug('In the add method')
-
     form = BookmarkForm()
 
     if form.validate_on_submit():
-
         APP.logger.debug('In the validate_on_submit')
-
         url = form.url.data
         description = form.description.data
         store_bookmark(url)
-        flash("Stored '{}-{}'".format(url, description))
+        flash("Stored '{} - {}'".format(url, description))
         return redirect(url_for('index'))
-
-    if form.errors:
-        APP.logger.debug('Not valid')
-        APP.logger.debug(form.errors)
 
     return render_template('add.html', form=form)
 

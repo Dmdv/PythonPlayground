@@ -4,7 +4,7 @@
 2. Get pip from https://bootstrap.pypa.io/get-pip.py
 3. Run python get-pip.py
 4. Install virtualenv: pip install virtualenv
-5. Install virtualenv wrapper: pip install virtualenvwrapper-win (virtualenvwrapper for linux)
+5. Install virtualenv wrapper: pip install virtualenvwrapper-win (virtualenvwrapper for linux, or python3 -m venv envname)
 6. mkproject name (linux) or mkvirtualenv name (windows)
 7. only windows: 
 	cd name

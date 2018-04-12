@@ -98,6 +98,13 @@ $ export WORKON_HOME=~/Envs
 
 Full instauctions: https://virtualenvwrapper.readthedocs.io/en/latest/install.html
 
+### Mac
+
+$ export WORKON_HOME=~/Envs
+$ mkdir -p $WORKON_HOME
+$ source /usr/local/bin/virtualenvwrapper.sh
+$ mkvirtualenv my_project
+
 
 ## Virtualenvwrapper-win ``(for windows)``
 

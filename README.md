@@ -220,5 +220,7 @@ pip install -r requirements.txt: install requirements <br>
 
 Links:
 
-http://virtualenvwrapper.readthedocs.io/en/latest <br>
-http://docs.python-guide.org/en/latest/dev/virtualenvs <br>
+http://virtualenvwrapper.readthedocs.io/en/latest <br/>
+http://docs.python-guide.org/en/latest/dev/virtualenvs <br/>
+http://virtualenvwrapper.readthedocs.io/en/latest/install.html#basic-installation  <br/>
+http://sourabhbajaj.com/mac-setup/Python/virtualenv.html <br/>

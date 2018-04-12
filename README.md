@@ -109,6 +109,15 @@ $ source /usr/local/bin/virtualenvwrapper.sh
 $ mkvirtualenv my_project
 
 
+### Choosing Python version
+
+#### make py3
+mkvirtualenv my_project --python=python3
+
+#### make py2
+mkvirtualenv my_project --python=python2
+
+
 ## Virtualenvwrapper-win ``(for windows)``
 
 ``
